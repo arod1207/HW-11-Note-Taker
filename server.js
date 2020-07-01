@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const { title } = require("process");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +20,11 @@ app.get("/notes", (req, res) => {
 // returning notes to front end //
 app.get("/api/notes", function (req, res) {
 res.sendFile(path.join(__dirname, "db/db.json"));
+});
+
+// display all notes //
+app.get("/api/notes/:notes", function(req, res) {
+  var chosen = req.params.notes;
 });
 
 // creating the post //
@@ -40,10 +46,13 @@ app.post("/api/notes", (req, res) => {
 });
 
 // deleting a note //
-app.delete("/api/notes/:newNote", function(req, res) {
-  var noteToDelete = req.params.newNote;
-  console.log(noteToDelete)
-});
+app.delete("/api/notes/:id", function(req, res) {
+  let noteToDelete = req.params.id;
+  console.log(noteToDelete);
+  for (let i = 0; i < noteToDelete.length; i++) {
+    console.log(noteToDelete);
+  }
+  });
 
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
