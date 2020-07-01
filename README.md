@@ -8,7 +8,7 @@
 
 ## Usage
 
-### Type node server.js in your terminal to start the server, open up your web browser and go to http://localhost:3000
+### Type "node server.js" in your terminal to start the server, open up your web browser and go to http://localhost:3000
 
   
   
