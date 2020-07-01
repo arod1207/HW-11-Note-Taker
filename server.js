@@ -12,6 +12,11 @@ app.use(express.json());
 // made a static path to public folder //
 app.use(express.static(path.join(__dirname, "public")));
 
+// sent html file index.html //
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
 // sent html file notes.html //
 app.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "public/notes.html"));
