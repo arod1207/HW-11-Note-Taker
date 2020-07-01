@@ -1,0 +1,23 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "Saves notes in a json file",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./public/server"
+  },
+  "author": "Armando Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arod1207/HW-11-Note-Taker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arod1207/HW-11-Note-Taker/issues"
+  },
+  "homepage": "https://github.com/arod1207/HW-11-Note-Taker#readme"
+}
