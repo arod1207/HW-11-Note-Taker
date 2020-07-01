@@ -18,26 +18,32 @@ app.get("/notes", (req, res) => {
 
 // returning notes to front end //
 app.get("/api/notes", function (req, res) {
-  return res.sendFile(path.join(__dirname, "db/db.json"));
+res.sendFile(path.join(__dirname, "db/db.json"));
 });
 
-// creating api routes //
+// creating the post //
 
 app.post("/api/notes", (req, res) => {
   let newNote = req.body;
-  console.log(newNote);
 
   fs.readFile("db/db.json", (err, data) => {
     if (err) throw err;
     let notes = JSON.parse(data);
     notes.push(newNote);
 
-    fs.writeFile("db/db.json", JSON.stringify(notes), (err) => {
+    fs.writeFile("db/db.json", JSON.stringify(notes) , (err) => {
       if (err) throw err;
       console.log("file written");
+      return res.json(newNote);
     });
-    return res.json(newNote);
   });
 });
+
+// deleting a note //
+app.delete("/api/notes/:newNote", function(req, res) {
+  var noteToDelete = req.params.newNote;
+  console.log(noteToDelete)
+});
+
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
