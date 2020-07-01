@@ -4,7 +4,7 @@
   "description": "Saves notes in a json file",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon ./public/server"
+    "dev": "nodemon server"
   },
   "author": "Armando Rodriguez",
   "license": "ISC",
